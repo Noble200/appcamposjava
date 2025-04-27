@@ -1,0 +1,72 @@
+{
+  "name": "agricampo-app",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de campos agrícolas",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"set BROWSER=none && npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder build --win -c.extraMetadata.main=build/electron.js",
+    "preelectron-pack": "npm run build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.17.1",
+    "@mui/x-data-grid": "^6.0.3",
+    "chart.js": "^4.2.1",
+    "date-fns": "^2.29.3",
+    "electron-is-dev": "^2.0.0",
+    "firebase": "9.19.1",
+    "formik": "^2.2.9",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "5.0.1",
+    "xlsx": "^0.18.5",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "electron": "^24.0.0",
+    "electron-builder": "^23.6.0",
+    "wait-on": "^7.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.agricampo.app",
+    "productName": "AgriCampo",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
