@@ -28,6 +28,7 @@ import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchIcon from '@mui/icons-material/Search';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { getProductos, deleteProducto, getAlmacenes } from './AlmacenesService';
 
@@ -163,14 +164,24 @@ const ProductosList = () => {
         <Typography variant="h5" component="h2">
           {filtro.almacen ? `Productos en ${almacenes.find(a => a.id === filtro.almacen)?.nombre || 'Almacén'}` : 'Gestión de Productos'}
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          startIcon={<AddIcon />}
-          onClick={handleAddProducto}
-        >
-          Nuevo Producto
-        </Button>
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <Button
+            variant="outlined"
+            color="primary"
+            startIcon={<CompareArrowsIcon />}
+            onClick={() => navigate('/transferencias/nueva')}
+          >
+            Transferir Producto
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<AddIcon />}
+            onClick={handleAddProducto}
+          >
+            Nuevo Producto
+          </Button>
+        </Box>
       </Box>
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
@@ -286,6 +297,14 @@ const ProductosList = () => {
                       </TableCell>
                       <TableCell>{producto.lote || 'N/A'}</TableCell>
                       <TableCell align="center">
+                        <Tooltip title="Transferir">
+                          <IconButton
+                            color="primary"
+                            onClick={() => navigate(`/transferencias/nueva?producto=${producto.id}&almacen=${producto.almacenId}`)}
+                          >
+                            <CompareArrowsIcon />
+                          </IconButton>
+                        </Tooltip>
                         <Tooltip title="Editar">
                           <IconButton
                             color="primary"

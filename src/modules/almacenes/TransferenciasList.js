@@ -36,10 +36,10 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import { 
   getAlmacenes, 
   getProductos, 
-  getTransferencias, 
   transferirProducto 
 } from './AlmacenesService';
 import { exportarPDF, exportarExcel } from '../../utils/exportUtils';
+import { getTransferencias } from './TransferenciasService';
 
 const TransferenciasList = () => {
   const navigate = useNavigate();
@@ -161,6 +161,7 @@ const TransferenciasList = () => {
   // Cambio en el formulario de transferencia
   const handleTransferFormChange = (e) => {
     const { name, value } = e.target;
+    console.log(`Actualizando campo ${name} con valor: ${value}`);
     setTransferForm(prev => ({
       ...prev,
       [name]: value
@@ -338,7 +339,7 @@ const TransferenciasList = () => {
           variant="contained"
           color="primary"
           startIcon={<AddIcon />}
-          onClick={handleNuevaTransferencia}
+          onClick={() => navigate('/transferencias/nueva')}
         >
           Nueva Transferencia
         </Button>

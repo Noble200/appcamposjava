@@ -15,6 +15,7 @@ import CampoForm from './modules/campos/CampoForm';
 import AlmacenesList from './modules/almacenes/AlmacenesList';
 import AlmacenForm from './modules/almacenes/AlmacenForm';
 import TransferenciasList from './modules/almacenes/TransferenciasList'
+import TransferenciaForm from './modules/almacenes/TransferenciaForm';
 import ProductosList from './modules/almacenes/ProductosList';
 import ProductoForm from './modules/almacenes/ProductoForm';
 import FumigacionesList from './modules/fumigaciones/FumigacionesList';
@@ -106,6 +107,7 @@ function App() {
 
                 {/* Rutas de Transferencias */}
                 <Route path="/transferencias" element={<TransferenciasList />} />
+                <Route path="/transferencias/nueva" element={<TransferenciaForm />} />
                 
                 {/* Rutas de Fumigaciones */}
                 <Route path="/fumigaciones" element={<FumigacionesList />} />
