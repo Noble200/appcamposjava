@@ -2,18 +2,20 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD41U09nX92noX5eIySXd6wbvXbYGkS13Q",
-  authDomain: "projecttest-c14e2.firebaseapp.com",
-  projectId: "projecttest-c14e2",
-  storageBucket: "projecttest-c14e2.firebasestorage.app",
-  messagingSenderId: "331612783725",
-  appId: "1:331612783725:web:516985c2da5b02fb936b64",
-  measurementId: "G-B0JFMZ7KR0"
+  apiKey: "AIzaSyCxPYtu2VWqDiHsw32XW-ZFdYkBHUqjmJc",
+  authDomain: "campo-app-java.firebaseapp.com",
+  projectId: "campo-app-java",
+  storageBucket: "campo-app-java.firebasestorage.app",
+  messagingSenderId: "796251294267",
+  appId: "1:796251294267:web:461e3190ef82f20d746a1e",
+  measurementId: "G-9BMS9EXCL6"
 };
 
-// Inicializar Firebase
+// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 
-// Exportar Firestore para usar como base de datos
-export const db = getFirestore(app);
+// Inicializa Firestore
+const db = getFirestore(app);
+
+export { db };
 export default app;

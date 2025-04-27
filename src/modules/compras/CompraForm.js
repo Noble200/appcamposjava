@@ -249,14 +249,25 @@ const CompraForm = () => {
   }
 
   return (
-    <Box>
+    <Box sx={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      mx: 'auto',
+      px: { xs: 1, sm: 2, md: 3 }
+    }}>
       <Typography variant="h5" component="h2" sx={{ mb: 3 }}>
         {id ? 'Editar Compra' : 'Nueva Compra'}
       </Typography>
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
-      <Paper sx={{ p: 3 }}>
+      <Paper sx={{ 
+        width: '100%', 
+        overflow: 'hidden',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        borderRadius: '8px',
+        mb: 3
+       }}>
         <Box component="form" onSubmit={handleSubmit}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>

@@ -177,7 +177,12 @@ const FumigacionesList = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      mx: 'auto',
+      px: { xs: 1, sm: 2, md: 3 }
+    }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h5" component="h2">
           Gestión de Fumigaciones
@@ -195,7 +200,13 @@ const FumigacionesList = () => {
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
       {/* Filtros */}
-      <Paper sx={{ p: 2, mb: 3 }}>
+      <Paper sx={{ 
+        width: '100%', 
+        overflow: 'hidden',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        borderRadius: '8px',
+        mb: 3
+       }}>
         <Box sx={{ display: 'flex', gap: 2 }}>
           <FormControl sx={{ minWidth: 200 }}>
             <InputLabel>Campo</InputLabel>

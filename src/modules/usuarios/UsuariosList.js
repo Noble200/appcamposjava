@@ -92,7 +92,12 @@ const UsuariosList = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      mx: 'auto',
+      px: { xs: 1, sm: 2, md: 3 }
+    }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h5" component="h2">
           Gestión de Usuarios
@@ -117,7 +122,13 @@ const UsuariosList = () => {
         </Alert>
       )}
 
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <Paper sx={{ 
+        width: '100%', 
+        overflow: 'hidden',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        borderRadius: '8px',
+        mb: 3
+       }}>
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', p: 3 }}>
             <CircularProgress />

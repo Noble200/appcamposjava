@@ -372,7 +372,12 @@ const ReportesList = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      mx: 'auto',
+      px: { xs: 1, sm: 2, md: 3 }
+    }}>
       <Typography variant="h5" component="h2" sx={{ mb: 3 }}>
         Generación de Reportes
       </Typography>

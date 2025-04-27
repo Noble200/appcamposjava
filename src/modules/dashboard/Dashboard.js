@@ -37,6 +37,8 @@ const SummaryCard = ({ title, count, icon, color, onClick }) => (
       cursor: onClick ? 'pointer' : 'default',
       transition: 'transform 0.2s',
       '&:hover': onClick ? { transform: 'translateY(-5px)' } : {},
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      borderRadius: '8px',
     }}
     onClick={onClick}
     elevation={3}
@@ -142,7 +144,12 @@ const Dashboard = () => {
   }
 
   return (
-    <Box>
+    <Box sx={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      mx: 'auto',
+      px: { xs: 1, sm: 2, md: 3 }
+    }}>
       <Typography variant="h4" component="h1" gutterBottom>
         Panel Principal
       </Typography>

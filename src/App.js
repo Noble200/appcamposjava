@@ -14,6 +14,7 @@ import CamposList from './modules/campos/CamposList';
 import CampoForm from './modules/campos/CampoForm';
 import AlmacenesList from './modules/almacenes/AlmacenesList';
 import AlmacenForm from './modules/almacenes/AlmacenForm';
+import TransferenciasList from './modules/almacenes/TransferenciasList'
 import ProductosList from './modules/almacenes/ProductosList';
 import ProductoForm from './modules/almacenes/ProductoForm';
 import FumigacionesList from './modules/fumigaciones/FumigacionesList';
@@ -79,6 +80,11 @@ function App() {
                 width: { sm: `calc(100% - ${sidebarOpen ? 240 : 60}px)` },
                 ml: { sm: `${sidebarOpen ? 240 : 60}px` },
                 transition: 'margin 0.2s',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'stretch',
+                maxWidth: '1200px',
+                mx: 'auto',
               }}
             >
               <Header toggleSidebar={toggleSidebar} onLogout={handleLogout} />
@@ -97,6 +103,9 @@ function App() {
                 <Route path="/productos" element={<ProductosList />} />
                 <Route path="/productos/nuevo" element={<ProductoForm />} />
                 <Route path="/productos/editar/:id" element={<ProductoForm />} />
+
+                {/* Rutas de Transferencias */}
+                <Route path="/transferencias" element={<TransferenciasList />} />
                 
                 {/* Rutas de Fumigaciones */}
                 <Route path="/fumigaciones" element={<FumigacionesList />} />
